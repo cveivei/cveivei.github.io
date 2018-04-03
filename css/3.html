@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>优先级</title>
+		<style type="text/css">
+			body{background-color: lavender;
+			}
+		</style>
+	</head>
+	<body>
+		<br /><br />
+		<p>优先级就是分配给指定的CSS声明的一个权重，它由 匹配的选择器中的 每一种选择器类型的 数值 决定。
+而当优先级与多个CSS声明中任意一个声明的优先级相等的时候，CSS中最后的那个声明将会被应用到元素上。
+当同一个元素有多个声明的时候，优先级才会有意义。因为每一个直接作用于元素的CSS规则总是会接管/覆盖（take over）该元素从祖先元素继承而来的规则。</p>
+
+<br /><br /><br />
+<div><ol>选择器的优先权解释说明</ol>
+<li>内联样式表的权值最高 1000。</li>
+<li>ID 选择器的权值为 100。</li>
+<li>Class 类选择器的权值为 10。</li>
+<li>HTML 标签（类型）选择器的权值为 1。</li></div>
+<br /><br /><br />
+<div ><ol>CSS 优先级规则：</ol>
+<li>选择器都有一个权值，权值越大越优先。</li>
+<li>当权值相等时，后出现的样式表设置要优于先出现的样式表设置。</li>
+<li>创作者的规则高于浏览者：即网页编写者设置的CSS 样式的优先权高于浏览器所设置的样式。</li>
+<li>继承的CSS 样式不如后来指定的CSS 样式</li>
+<li>在同一组属性设置中标有“!important”规则的优先级最大。</li></div>
+<a href="index.html"><p align="bottom">back</p></a>
+
+	</body>
+</html>
