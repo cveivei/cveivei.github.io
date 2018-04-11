@@ -1,0 +1,26 @@
+
+@font-face{
+	font-family:Tensentype-XingShuF;
+	src: url(../font1477/Tensentype-XingShuF.ttf);
+}
+#a{text-align: center;
+	font-family: Tensentype-XingShuF;
+	letter-spacing: 4px;
+}
+img{margin-left: 0;
+	margin-right: 30px;
+}
+p{
+	text-align: center;
+	font-size: 14px;
+}
+span{
+	color: cadetblue;
+}
+strong{
+	color: red;
+}
+ul{align:cener;
+	font-size: 16px;line-height: 2.5em;
+	
+}
