@@ -18,7 +18,15 @@
 			border: 1px solid gainsboro ;
 			margin: 0 auto;
 		}
-		#list{
+		 #botton {
+            position: absolute;
+            left: 450px;
+            bottom: 50px;
+             z-index: 1;
+            height: 10px;
+            width: 100px;
+        }	
+        #list{
 			position:absolute;
 			z-index: 1px;
 			width: 5120px;
@@ -32,67 +40,37 @@
 			
 		}
 		
- #botton {
-            position: absolute;
-            left: 450px;
-            bottom: 50px;
-            z-index: 6;
-            height: 10px;
-            width: 100px;
-        }	
 
 #botton span {
-
   	width: 10px;
-
   	height: 10px;
-
   	border-radius:50%;
-
   	background: #ccc;
-
   	display: inline-block;
    cursor: pointer;
   	 }
  
   	#botton .on{
-
   	 
-
   	 	background: orangered;
   	 	
-
-
   	 }
   	 a{
-
 	   text-decoration: none;
-
 	    font-size: 40px;
-
 	       color: #fff;
-
           }
 		 a{
-
 	float: left;
-
 	width: 50px;
-
 	height: 70px;
-
 	line-height: 70px;
-
   background-color: RGBA(0, 0, 0, .3);
        
 	border-radius:4px ;
-
 	text-align:center ;
-
 	display: none;
-
 	cursor: pointer;
-
 }
 a:hover { background-color: RGBA(0, 0, 0, .7);}
 #father:hover a{
@@ -100,23 +78,14 @@ display: block;
   
 }
 #left{
-
 	   position: absolute;
-
 	   left: 20px;
-
 	   top: 300px;
-
      }
-
 #right{
-
 	    position: absolute;
-
 	    right:20px;
-
 	    top:300px;
-
      } 	
 		</style>
 		<script type="text/javascript">
@@ -126,34 +95,42 @@ display: block;
 			var left=document.getElementById('left');
 			var botton=document.getElementById('botton').getElementsByTagName('span');
 			var index=1;
+			var m,i;
 			right.onclick =function(){
 				index+=1;
 				showbotton();
+				m=index;
 				list.style.left =(parseInt(list.style.left)-1024)%5120+'px';
 			}
 				left.onclick =function(){
-					 index-=1;
+//					 index-=1;
+               index=(index=0?4:index-1);
 				showbotton();
-				list.style.left =(parseInt(list.style.left)+1024*-1)%5120+'px';
+				m=index;
+				list.style.left =((parseInt(list.style.left))%5120==0?-4096:(parseInt(list.style.left)+1024)%5120)+'px';
 			}
-			  
-				
-				function showbotton(){
-					for(var i=0;i<botton.length;i++)
+			function showbotton(){
+					for(i=0;i<botton.length;i++)
 					{
 						if(botton[i].className=='on')
 						{botton[i].className='';
 						break;}
 					}
-					botton[Math.abs(index -1)%5].className='on';
+					botton[Math.abs(index)%5].className='on';
 					
-				}
+				
 			}
 		</script>
 	</head>
 	<body>
 		<div id="father">
-				
+	 <div id="botton">
+				<span index="0" class="on"></span>
+				<span index="1"></span>
+				<span index="2"></span>
+				<span index="3"></span>
+				<span index="4"></span>
+			</div>			
 	
     <div id="list" style="left:0px;">
     	       
@@ -164,14 +141,8 @@ display: block;
 				<img src="img/5.jpg"  alt=""/>
 				
 			</div>
-			<div id="botton">
-				<span index="1" class="on"></span>
-				<span index="2"></span>
-				<span index="3"></span>
-				<span index="4"></span>
-				<span index="5"></span>
-				
-			</div>
+  
+			
 			<a href="javascript:;" id="left"><</a>
             <a href="javascript:;" id="right">></a>
 			
