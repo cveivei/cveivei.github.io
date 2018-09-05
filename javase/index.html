@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			#a{
+				line-height: 1.5;
+			text-indent: 2em;
+			}
+			#c{}
+			
+		</style>
+	</head>
+	<body>
+	    <input type="text" value="输入你想输入的内容。。。"   id="c"/>
+		<input type="button" value="红色" onclick="color('red')" />
+		<input type="button" value="黄色" onclick="color('yellow')" />
+		<input type="button" value="蓝色" onclick="color('blue')" />
+		<input type="button" value="绿色" onclick="color('green')" />
+		<input type="button" value="白色" onclick="color('white')" />
+		<input type="color" value="#ffffff" onchange="colorchange()" id="b"/>
+		
+		<div >
+				<label for="username">输入字体的大小</label>
+				<input type="number" name="username" id="username" value="12" onchange="fontsize()" />
+			</div>
+		
+	</body>
+</html>
+<script type="text/javascript">
+//	var a=document.getElementById("a");
+//	a.style.color="cadetblue";
+	function color(str){
+		document.body.style.backgroundColor = str;
+	}
+	function colorchange(){
+		var b=document.getElementById("b").value;
+		document.body.style.backgroundColor = b;
+	}
+	function fontsize(){
+		var user=document.getElementById("username").value;
+		document.getElementById("c").style.fontSize=user+'px';
+		
+	}
+	
+</script>
